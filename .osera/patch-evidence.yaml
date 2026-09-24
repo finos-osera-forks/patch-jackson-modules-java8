@@ -1,0 +1,17 @@
+schema: osera-patch-evidence/0.1.0
+producer: moderne
+release: 2.13.5.1-osera-00001
+baseline: v2.13.5+patch.baseline
+fixes:
+  - cve: CVE-2025-52999
+    upstream: https://nvd.nist.gov/vuln/detail/CVE-2025-52999
+    artifacts:
+      - com.fasterxml.jackson.core:jackson-core
+    note: New in this release; ported onto 2.13.5; fixed at 2.13.5.1-backpatch-00001 (backpatch-jackson-core@b9e4b3a).
+tests:
+  commit: 834f6661d74e25c452b5d55f2eed682d583155ee
+  command: none in this repository
+  runtime: none, no build or test ran for this release
+  report: carried, see the evidence of the release named in the note
+  result: pass
+  note: this release changes nothing in this repository, nothing ran here; its test provenance is jackson-2.13 2.13.5.1-osera-00001 in finos-osera-forks/patch-jackson-bom at v2.13.5.1-osera-00001, whose .osera/patch-evidence.yaml records the tests that ran
