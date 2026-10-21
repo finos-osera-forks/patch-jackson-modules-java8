@@ -1,7 +1,7 @@
 # Licensed under the Apache License, Version 2.0: https://www.apache.org/licenses/LICENSE-2.0
 schema: osera-patch-evidence/0.1.0
 producer: moderne
-release: 2.15.4.1-osera-00004
+release: 2.15.4.1-osera-00005
 baseline: v2.15.4+patch.baseline
 fixes:
   - cve: CVE-2026-18401
@@ -35,11 +35,19 @@ fixes:
     basis: adapted
     artifacts:
       - com.fasterxml.jackson.core:jackson-databind
-    note: New in this release; ported onto 2.15.4; fixed at 2.15.4.1-backpatch-00004 (backpatch-jackson-databind@4ba8fe6).
+    note: Carried from 2.15.4.1-backpatch-00004; ported onto 2.15.4; fixed at 2.15.4.1-backpatch-00004 (backpatch-jackson-databind@4ba8fe6).
+  - cve: CVE-2026-54512
+    upstream_fix_url: https://github.com/FasterXML/jackson-databind/commit/434d6c511de7fdd9872f29157aafb6162d12d8d5
+    advisory_url: https://nvd.nist.gov/vuln/detail/CVE-2026-54512
+    patch_commit_url: https://github.com/moderne-backpatch-alliance/backpatch-jackson-databind/commit/48f35c9
+    basis: adapted
+    artifacts:
+      - com.fasterxml.jackson.core:jackson-databind
+    note: New in this release; ported onto 2.15.4; fixed at 2.15.4.1-backpatch-00005 (backpatch-jackson-databind@48f35c9).
 tests:
-  commit: a6ba8e0eebef6a734b4be34bbcf5874bfdead7fe
+  commit: bd755fd8323d6d485795015e5b88ea4077317fd6
   command: none in this repository
   runtime: none, no build or test ran for this release
   report: carried, see the evidence of the release named in the note
   result: pass
-  note: this release changes nothing in this repository, nothing ran here; its test provenance is jackson-2.15 2.15.4.1-osera-00004 in finos-osera-forks/patch-jackson-bom at v2.15.4.1-osera-00004, whose .osera/patch-evidence.yaml records the tests that ran
+  note: this release changes nothing in this repository, nothing ran here; its test provenance is jackson-2.15 2.15.4.1-osera-00005 in finos-osera-forks/patch-jackson-bom at v2.15.4.1-osera-00005, whose .osera/patch-evidence.yaml records the tests that ran
