@@ -1,7 +1,7 @@
 # Licensed under the Apache License, Version 2.0: https://www.apache.org/licenses/LICENSE-2.0
 schema: osera-patch-evidence/0.1.0
 producer: moderne
-release: 2.13.5.1-osera-00013
+release: 2.13.5.1-osera-00014
 baseline: v2.13.5+patch.baseline
 fixes:
   - cve: CVE-2025-52999
@@ -151,12 +151,21 @@ fixes:
     basis: adapted
     artifacts:
       - com.fasterxml.jackson.core:jackson-databind
-    note: New in this release; ported onto 2.13.5; fixed at 2.13.5.1-backpatch-00013 (backpatch-jackson-databind@964de55).
+    note: Carried from 2.13.5.1-backpatch-00013; ported onto 2.13.5; fixed at 2.13.5.1-backpatch-00013 (backpatch-jackson-databind@964de55).
+  - cve: CVE-2026-18401
+    upstream_fix_url: https://github.com/FasterXML/jackson-core/commit/b0c428e6f993e1b5ece5c1c3cb2523e887cd52cf
+    advisory_url: https://nvd.nist.gov/vuln/detail/CVE-2026-18401
+    patch_commit_url: https://github.com/moderne-backpatch-alliance/backpatch-jackson-core/commit/58bfacd
+    basis: adapted
+    artifacts:
+      - com.fasterxml.jackson.core:jackson-core
+      - com.fasterxml.jackson.jr:jackson-jr-all
+    note: New in this release; ported onto 2.13.5; fixed at 2.13.5.1-backpatch-00014 (backpatch-jackson-core@58bfacd).
 tests:
-  commit: 456958c89c8a4642ce95540dbab39aae7de469b8
+  commit: ebf93e4fcaf44c68e276b49e61fee33862dffe47
   command: none in this repository
   runtime: none, no build or test ran for this release
-  report: jackson-databind-2.13.5.1-osera-00013-tests.zip
-  report_sha256: 525811ac07167f9c0b73c10f059612169c383ea6b1d5dcb48fb0763a2d947a9d
+  report: jackson-core-2.13.5.1-osera-00014-tests.zip
+  report_sha256: c6e074813b31b10ac2069d58d81ba9128ace824b9c3729dd0a5940092ffe6bbb
   result: pass
-  note: this release changes nothing in this repository, nothing ran here; its test provenance is jackson-2.13 2.13.5.1-osera-00013 in finos-osera-forks/patch-jackson-bom at v2.13.5.1-osera-00013, whose .osera/patch-evidence.yaml records the tests that ran
+  note: this release changes nothing in this repository, nothing ran here; its test provenance is jackson-2.13 2.13.5.1-osera-00014 in finos-osera-forks/patch-jackson-bom at v2.13.5.1-osera-00014, whose .osera/patch-evidence.yaml records the tests that ran
