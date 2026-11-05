@@ -1,7 +1,7 @@
 # Licensed under the Apache License, Version 2.0: https://www.apache.org/licenses/LICENSE-2.0
 schema: osera-patch-evidence/0.1.0
 producer: moderne
-release: 2.13.5.1-osera-00014
+release: 2.13.5.1-osera-00015
 baseline: v2.13.5+patch.baseline
 fixes:
   - cve: CVE-2025-52999
@@ -160,12 +160,11 @@ fixes:
     artifacts:
       - com.fasterxml.jackson.core:jackson-core
       - com.fasterxml.jackson.jr:jackson-jr-all
-    note: New in this release; ported onto 2.13.5; fixed at 2.13.5.1-backpatch-00014 (backpatch-jackson-core@58bfacd).
+    note: Carried from 2.13.5.1-backpatch-00014; ported onto 2.13.5; fixed at 2.13.5.1-backpatch-00014 (backpatch-jackson-core@58bfacd).
 tests:
-  commit: ebf93e4fcaf44c68e276b49e61fee33862dffe47
+  commit: d1296a1102b93ce2c7d92fd18db8a73f505d2be2
   command: none in this repository
   runtime: none, no build or test ran for this release
-  report: jackson-core-2.13.5.1-osera-00014-tests.zip
-  report_sha256: c6e074813b31b10ac2069d58d81ba9128ace824b9c3729dd0a5940092ffe6bbb
+  report: carried, see the evidence of the release named in the note
   result: pass
-  note: this release changes nothing in this repository, nothing ran here; its test provenance is jackson-2.13 2.13.5.1-osera-00014 in finos-osera-forks/patch-jackson-bom at v2.13.5.1-osera-00014, whose .osera/patch-evidence.yaml records the tests that ran
+  note: this release changes nothing in this repository, nothing ran here; its test provenance is jackson-2.13 2.13.5.1-osera-00015 in finos-osera-forks/patch-jackson-bom at v2.13.5.1-osera-00015, whose .osera/patch-evidence.yaml records the tests that ran
